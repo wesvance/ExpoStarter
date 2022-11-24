@@ -90,16 +90,18 @@ jobs:
         run: eas build --platform all --profile develop --non-interactive #--auto-submit
 
   storybook-build:
-    name: Install and Build 🔧
-    run: | # Install npm packages and build the Storybook files
-      yarn build-storybook
+    name: Build & Deploy Storybook
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Storybook
+        run: |
+          yarn build-storybook
 
-  storybook-deploy:
-    name: Deploy 🚀
-    uses: JamesIves/github-pages-deploy-action@3.6.2
-    with:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      BRANCH: develop # The branch the action should deploy to.
-      FOLDER: docs-build # The folder that the build-storybook script generates files.
-      CLEAN: true # Automatically remove deleted files from the deploy branch
-      TARGET_FOLDER: docs # The folder that we serve our Storybook files from
+      - name: Deploy Storybook
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: develop # The branch the action should deploy to.
+          FOLDER: docs-build # The folder that the build-storybook script generates files.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          TARGET_FOLDER: docs # The folder that we serve our Storybook files from
