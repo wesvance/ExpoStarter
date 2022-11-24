@@ -13,7 +13,7 @@
     "eject": "expo eject",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -o docs-build",
     "file": "plop",
     "postinstall": "patch-package",
     "prebuild": "npx expo prebuild --clean",

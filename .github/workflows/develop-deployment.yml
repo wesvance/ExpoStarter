@@ -90,7 +90,7 @@ jobs:
         run: eas build --platform all --profile develop --non-interactive #--auto-submit
 
   storybook-build:
-    name: Build & Deploy Storybook
+    name: Storybook Build - Develop
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup repo

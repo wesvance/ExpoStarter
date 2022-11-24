@@ -82,5 +82,6 @@ ios/
 coverage/
 # Ignore the eas built file
 build-*.tar.gz
+/docs-build
 # Todo - update this with the app name
 *example.app
