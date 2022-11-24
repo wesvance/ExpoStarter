@@ -89,30 +89,17 @@ jobs:
       - name: 🚀 Build app
         run: eas build --platform all --profile develop --non-interactive #--auto-submit
 
-  # Deploy the change to chromatic
-  chromatic-deployment:
-    name: Chromatic Docs Deployment
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Install dependencies
-        run: yarn
+  storybook-build:
+    name: Install and Build 🔧
+    run: | # Install npm packages and build the Storybook files
+      yarn build-storybook
 
-      - name: Publish to Chromatic
-        uses: chromaui/action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-
-      # Todo - Add your chromatic project id here
-      # - name: Comment Chromatic Link
-      #   uses: peter-evans/commit-comment@v1
-      #   with:
-      #     body: |
-      #       [StoryBook Documentation][1]
-      #       - [Chromatic Library][2]
-
-      #       [1]: https://develop--id_here.chromatic.com
-      #       [2]: https://chromatic.com/library?appId=id_here&branch=develop
+  storybook-deploy:
+    name: Deploy 🚀
+    uses: JamesIves/github-pages-deploy-action@3.6.2
+    with:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      BRANCH: develop # The branch the action should deploy to.
+      FOLDER: docs-build # The folder that the build-storybook script generates files.
+      CLEAN: true # Automatically remove deleted files from the deploy branch
+      TARGET_FOLDER: docs # The folder that we serve our Storybook files from
