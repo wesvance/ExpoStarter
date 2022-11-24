@@ -1,0 +1,10 @@
+export const headingFontBold = 'GTWalsheim-Bd'
+export const paragraphFont = 'Barlow-Regular'
+export const paragraphFontMedium = 'Barlow-Medium'
+export const paragraphFontBold = 'Barlow-Bold'
+
+export const faProThin = 'FaPro-Thin'
+export const faProLight = 'FaPro-Light'
+export const faProRegular = 'FaPro-Regular'
+export const faProSolid = 'FaPro-Solid'
+export const faBrandsRegular = 'FaBrands-Regular'

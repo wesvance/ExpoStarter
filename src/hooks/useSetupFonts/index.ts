@@ -1,0 +1,1 @@
+export { useSetupFonts } from './useSetupFonts'

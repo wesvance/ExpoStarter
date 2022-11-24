@@ -1,0 +1,65 @@
+{
+  "expo": {
+    "name": "starter",
+    "slug": "starter",
+    "version": "0.0.1",
+    "owner": "owner_name",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/project-id-here"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "requireFullScreen": true,
+      "supportsTablet": true,
+      "bundleIdentifier": "app.expo.starter",
+      "buildNumber": "0.0.1",
+      "icon": "./assets/apple-touch-icon.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-chrome-512x512.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "app.expo.starter",
+      "versionCode": 440000001
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "plugins": [
+      "@notifee/react-native",
+      [
+        "@rnmapbox/maps",
+        {
+          "RNMapboxMapsImpl": "mapbox",
+          "RNMapboxMapsDownloadToken": ""
+        }
+      ],
+      "sentry-expo",
+      "@logrocket/react-native"
+    ],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "starter",
+            "project": "starter",
+            "authToken": ""
+          }
+        }
+      ]
+    },
+    "jsEngine": "hermes"
+  }
+}

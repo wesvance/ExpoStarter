@@ -1,0 +1,1 @@
+export { useThemeImage } from './useThemeImage'

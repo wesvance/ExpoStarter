@@ -1,0 +1,17 @@
+{
+  "extends": "expo/tsconfig.base",
+  "include": [".*.js", "**/*.js", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "__tests__/**/*-test.ts"],
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "assets": ["assets/*"],
+      "*": ["src/*"]
+    }
+  },
+  "allowJs": false,
+  "strict": true,
+  "noUnusedLocals": true,
+  "noUnusedParameters": true
+}

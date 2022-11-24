@@ -1,0 +1,101 @@
+{
+  "cli": {
+    "version": ">= 0.47.0"
+  },
+  "build": {
+    "base": {
+      "yarn": "1.22.17",
+      "node": "16.14.0",
+      "android": {
+        "image": "latest"
+      },
+      "cache": {
+        "disabled": true,
+        "key": "changeable_cachekey"
+      }
+    },
+    "production": {
+      "extends": "base",
+      "channel": "production",
+      "env": {
+        "APP_ENV": "production"
+      }
+    },
+    "staging": {
+      "extends": "base",
+      "channel": "staging",
+      "env": {
+        "APP_ENV": "staging"
+      }
+    },
+    "develop": {
+      "extends": "base",
+      "channel": "develop",
+      "distribution": "internal",
+      "developmentClient": true,
+      "env": {
+        "APP_ENV": "development"
+      }
+    },
+    "local": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "local",
+      "ios": {
+        "simulator": true,
+        "image": "latest"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_ENV": "local"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./tmp/google_service_account.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "hello@example.com",
+        "ascAppId": "IOS_PROD_APP_ID_HERE",
+        "appleTeamId": "APPLE_TEAM_APP_ID_HERE",
+        "ascApiKeyPath": "./tmp/apple_api_key.p8",
+        "ascApiKeyIssuerId": "APPKE_API_KEY_ISSUER_ID",
+        "ascApiKeyId": "APPLE_API_KEY_ID"
+      }
+    },
+    "staging": {
+      "android": {
+        "serviceAccountKeyPath": "./tmp/google_service_account.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "hello@example.com",
+        "ascAppId": "IOS_STAGING_APP_ID_HERE",
+        "appleTeamId": "APPLE_TEAM_APP_ID_HERE",
+        "ascApiKeyPath": "./tmp/apple_api_key.p8",
+        "ascApiKeyIssuerId": "APPKE_API_KEY_ISSUER_ID",
+        "ascApiKeyId": "APPLE_API_KEY_ID"
+      }
+    },
+    "develop": {
+      "android": {
+        "serviceAccountKeyPath": "./tmp/google_service_account.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "hello@example.com",
+        "ascAppId": "IOS_DEVELOPMENT_APP_ID_HERE",
+        "appleTeamId": "APPLE_TEAM_APP_ID_HERE",
+        "ascApiKeyPath": "./tmp/apple_api_key.p8",
+        "ascApiKeyIssuerId": "APPKE_API_KEY_ISSUER_ID",
+        "ascApiKeyId": "APPLE_API_KEY_ID"
+      }
+    }
+  }
+}

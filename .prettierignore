@@ -1,0 +1,10 @@
+*.min.*
+*lock.*
+.history
+.next
+.expo
+.expo-shared
+.vscode
+build
+dist
+node_modules
