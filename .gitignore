@@ -83,5 +83,6 @@ coverage/
 # Ignore the eas built file
 build-*.tar.gz
 /docs-build
+/out*
 # Todo - update this with the app name
 *example.app
