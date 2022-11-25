@@ -7,7 +7,7 @@
     "build-web:local": "expo build:web",
     "build-ios:local": "eas build --profile local --platform ios --local",
     "build-android:local": "eas build --profile local --platform android --local",
-    "test": "jest --watch",
+    "test": "jest --watch --passWithNoTests",
     "lint": "eslint ./src",
     "format": "prettier --write .",
     "eject": "expo eject",
