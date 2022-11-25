@@ -89,11 +89,11 @@ jobs:
       - name: 🚀 Build app
         run: eas build --platform all --profile develop --non-interactive #--auto-submit
 
-  eas-build:
-    name: Storybook Build - Develop
+  docs-build:
+    name: Docs Build - Develop
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy storybook to GitHub Pages
+      - name: Deploy storybook docs to GitHub Pages
         run: yarn deploy-storybook -- --ci
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
