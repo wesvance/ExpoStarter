@@ -109,7 +109,7 @@ export const StyledBox = styled(LibBox)<StyledBoxProps>`
     const flexDirectionStyle = flexDirection ? `flex-direction: ${flexDirection}` : ''
     const borderRadiusStyle = borderRadius
       ? `border-radius: ${
-          borderRadius === 'full' ? '999px' : `${theme.space.base[borderRadius]}px`
+          borderRadius === 'full' ? '999px' : `${theme.radius.base[borderRadius]}px`
         }`
       : ''
     const maxWidthStyle =

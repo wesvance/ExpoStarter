@@ -1,6 +1,6 @@
 import { ViewProps } from 'react-native'
 
-import { BoxSpacing, Color, ResponsiveProp, Shadow, Size, Space } from 'utils/theme'
+import { BoxSpacing, Color, Radius, ResponsiveProp, Shadow, Size, Space } from 'utils/theme'
 
 type Flex = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around'
 type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse'
@@ -15,7 +15,7 @@ export type BoxProps = {
   background?: ResponsiveProp<Color>
   color?: ResponsiveProp<Color>
   flexDirection?: ResponsiveProp<FlexDirection>
-  borderRadius?: ResponsiveProp<Space | 'full'>
+  borderRadius?: ResponsiveProp<Radius | 'full'>
   shadow?: ResponsiveProp<Shadow>
   maxWidth?: ResponsiveProp<number | string>
   maxHeight?: ResponsiveProp<number | string>
@@ -45,7 +45,7 @@ export type StyledBoxProps = {
   background?: Color
   color?: Color
   flexDirection?: FlexDirection
-  borderRadius?: Space | 'full'
+  borderRadius?: Radius | 'full'
   shadow?: Size
   maxWidth?: string | number
   maxHeight?: string | number
